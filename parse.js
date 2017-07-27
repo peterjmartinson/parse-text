@@ -2,7 +2,7 @@
 
 let output = document.getElementById('output');
 
-const getJSON = function(url) {
+const get = function(url) {
     const xhr = new XMLHttpRequest();
     return new Promise( (resolve, reject) => {
         xhr.onreadystatechange = () => {
@@ -28,7 +28,7 @@ function parseText(text) {
   return output_text;
 }
 
-getJSON('text.txt')
+get('text.txt')
   .then( (response) => {
     output.innerHTML = parseText(response);
   });
